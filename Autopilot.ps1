@@ -25,25 +25,6 @@ function MgGraph-Authentication {
 
 }
 
-function AutopilotDeviceEnrolmentCheck {
-    ## Check if the device is already in Autopilot.
-    Write-Host "Checking if device is already enrolled in Autopilot" -ForegroundColor Cyan
-    $serialNumber = (Get-WmiObject -Class Win32_BIOS).SerialNumber
-    $global:autopilotRecord = Get-MgDeviceManagementWindowsAutopilotDeviceIdentity | Where-Object serialNumber -eq "$serialNumber" | Select-Object serialNumber, GroupTag, Model, LastContactedDateTime
-
-
-    if ($autopilotRecord) {
-        $enrolledGroupTag = Get-MgDeviceManagementWindowsAutopilotDeviceIdentity | Where-Object serialNumber -eq "$serialNumber" | Select-Object -ExpandProperty GroupTag
-        Write-Host "Device already enrolled with Group Tag: $enrolledGroupTag" -ForegroundColor Green
-        IntuneDeviceCheck
-        }
-    else {
-        Write-Host "Device is not enrolled. Moving to enrolment step" -ForegroundColor Yellow
-        IntuneDeviceCheck
-        }
-
-}
-
 function Start-AutopilotEnrolment {
     ## Grab required details and create Autopilot CSV
     $SerialNumber = (Get-WmiObject -Class Win32_BIOS).SerialNumber
