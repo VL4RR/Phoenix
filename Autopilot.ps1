@@ -33,11 +33,11 @@ function downloadPreReqs {
     New-Item -ItemType Directory -Path "X:\Autopilot"
 
     Write-Host "Downloading Pre-reqs..." -ForegroundColor Cyan
-    Invoke-WebRequest https://raw.githubusercontent.com/ChrisB2k00/OSD/main/OSD%20Autopilot/Create_4kHash_using_OA3_Tool.ps1 -OutFile X:\Autopilot\Create_4kHash_using_OA3_Tool.ps1
-    Invoke-WebRequest https://raw.githubusercontent.com/ChrisB2k00/OSD/main/OSD%20Autopilot/OA3.cfg -OutFile X:\Autopilot\OA3.cfg
-    Invoke-WebRequest https://raw.githubusercontent.com/ChrisB2k00/OSD/main/OSD%20Autopilot/PCPKsp.dll -OutFile X:\Autopilot\PCPKsp.dll
-    Invoke-WebRequest https://raw.githubusercontent.com/ChrisB2k00/OSD/main/OSD%20Autopilot/input.xml -OutFile X:\Autopilot\input.xml
-    Invoke-WebRequest https://raw.githubusercontent.com/ChrisB2k00/OSD/main/OSD%20Autopilot/oa3tool.exe -OutFile X:\Autopilot\oa3tool.exe
+    Invoke-WebRequest https://raw.githubusercontent.com/VL4RR/Phoenix/refs/heads/main/Create_4kHash_using_OA3_Tool -OutFile X:\Autopilot\Create_4kHash_using_OA3_Tool.ps1
+    Invoke-WebRequest https://raw.githubusercontent.com/VL4RR/Phoenix/refs/heads/main/OA3.cfg -OutFile X:\Autopilot\OA3.cfg
+    Invoke-WebRequest https://raw.githubusercontent.com/VL4RR/Phoenix/refs/heads/main/PCPKsp.dll -OutFile X:\Autopilot\PCPKsp.dll
+    Invoke-WebRequest https://raw.githubusercontent.com/VL4RR/Phoenix/refs/heads/main/input.xml -OutFile X:\Autopilot\input.xml
+    Invoke-WebRequest https://raw.githubusercontent.com/VL4RR/Phoenix/refs/heads/main/oa3tool.exe -OutFile X:\Autopilot\oa3tool.exe
     Write-Host "Pre-reqs downloaded!" -ForegroundColor Green
 
     AutopilotDeviceEnrolmentCheck
