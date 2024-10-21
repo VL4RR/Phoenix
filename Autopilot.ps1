@@ -20,9 +20,7 @@ function MgGraph-Authentication {
     } catch {
         Write-Host "Error connecting to graph: $_." -ForegroundColor Red
         Read-Host -Prompt "Press Enter to exit"
-
     }
-
 }
 
 $grouptag = Read-Host -Prompt "Group Tag"
@@ -46,3 +44,5 @@ try {
 } catch {
     Write-Host "Error: $_" -ForegroundColor Red
 }
+
+MgGraph-Authentication
