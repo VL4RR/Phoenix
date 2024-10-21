@@ -1,6 +1,8 @@
 ﻿## This script will check if the device is in Autopilot. If it is, it will print the group tag of the device.
 ## It will then proceed to remove the Intune record if required, then install Windows & drivers
 
+Write-host "Chris"
+
 $winVer = "Windows 11 23H2 x64"
 
 function MgGraph-Authentication {
